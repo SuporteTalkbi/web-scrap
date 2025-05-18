@@ -12,11 +12,9 @@ app.use((req, res, next) => {
 app.get('/scrape', async (req, res) => {
   try {
     // Simulando navegador com headers
-    const response = await axios.get('https://1drv.ms/x/c/80098ff3d93ac023/EaCXh5CRkLpPm1z84N8zndoBFQI8vTry8s1cASNezDq-NQ?e=L1oXmv', {
+    const response = await axios.get('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://1drv.ms/x/c/80098ff3d93ac023/EaCXh5CRkLpPm1z84N8zndoBFQI8vTry8s1cASNezDq-NQ?e=L1oXmv'), {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml',
-        'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
       }
     });
     
