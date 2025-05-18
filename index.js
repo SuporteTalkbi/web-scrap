@@ -26,7 +26,7 @@ app.get('/scrape', async (req, res) => {
     await page.setViewport({ width: 1920, height: 1080 });
     
     console.log('Acessando URL do Excel...');
-    await page.goto('https://1drv.ms/x/c/80098ff3d93ac023/EaCXh5CRkLpPm1z84N8zndoBFQI8vTry8s1cASNezDq-NQ?e=L1oXmv', {
+    await page.goto('process.env.SHEET_URL', {
       waitUntil: 'networkidle2',
       timeout: 90000
     });
