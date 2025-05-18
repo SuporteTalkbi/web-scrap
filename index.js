@@ -15,7 +15,17 @@ app.get('/scrape', async (req, res) => {
   
   // Iniciar o navegador
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--no-first-run',
+      '--no-zygote',
+      '--disable-gpu',
+      '--single-process', // Reduz consumo de memória
+      '--disable-extensions'
+    ],
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium-browser'
   });
   const page = await browser.newPage();
